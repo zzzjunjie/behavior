@@ -30,7 +30,7 @@ public class DefaultNodes {
 
 
     static {
-        //actions
+        //actions 行为节点
         defaultNodes.put("Error", Error.class);
         defaultNodes.put("Failer", Failer.class);
         defaultNodes.put("Runner", Runner.class);
@@ -38,13 +38,13 @@ public class DefaultNodes {
         defaultNodes.put("Wait", Wait.class);
         defaultNodes.put("SubTree", SubTree.class);
 
-        //composites
+        //composites 复合节点
         defaultNodes.put("MemPriority", MemPriority.class);
         defaultNodes.put("MemSequence", MemSequence.class);
         defaultNodes.put("Priority", Priority.class);
         defaultNodes.put("Sequence", Sequence.class);
 
-        //decorators
+        //decorators 修饰节点
         defaultNodes.put("Inverter", Inverter.class);
         defaultNodes.put("Limiter", Limiter.class);
         defaultNodes.put("MaxTime", MaxTime.class);

@@ -18,11 +18,11 @@ public class Tick {
     private BehaviorTree tree;
 
     private Blackboard blackboard;
-
+    // 加入的节点
     private List<BaseNode> openNodes = new ArrayList<>();
 
     Object target;
-
+    // 节点数量
     private int nodeCount;
 
     public Tick() {

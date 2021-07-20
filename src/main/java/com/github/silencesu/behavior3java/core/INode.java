@@ -10,7 +10,7 @@ import com.github.silencesu.behavior3java.constant.B3Status;
  */
 public interface INode extends IBaseWrapper{
 
-
+    /** 初始化节点 */
     void initialize(BTNodeCfg nodeCfg);
 
     String getCategory();

@@ -1,5 +1,6 @@
 package com.github.silencesu.behavior3java.constant;
 
+
 /**
  * 行为树状态
  *
@@ -8,17 +9,24 @@ package com.github.silencesu.behavior3java.constant;
  * Created by Silence on 2019/3/2.
  */
 public enum B3Status {
-    SUCCESS(1), FAILURE(2), RUNNING(3), ERROR(4),
-    ;
+    /** 1.成功 */
+	SUCCESS(1),
+	/** 2.失败 */
+	FAILURE(2),
+	/** 3.运行中 */
+	RUNNING(3),
+	/** 4.出错 */
+	ERROR(4),
+	;
 
-    private int value;
+	private final int value;
 
-    B3Status(int i) {
+	B3Status(int i) {
 
-        this.value = i;
-    }
+		this.value = i;
+	}
 
-    public int getValue() {
-        return value;
-    }
+	public int getValue() {
+		return value;
+	}
 }
