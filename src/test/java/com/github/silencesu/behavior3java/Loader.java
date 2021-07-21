@@ -29,7 +29,7 @@ public class Loader {
 
     @Test
     public void loadTree() {
-        String confJson = Loader.class.getResource("/").getPath() + "tree.json";
+        String confJson = Loader.class.getResource("/").getPath() + "demo.json";
         BehaviorTree behaviorTree = B3Loader.loadB3Tree(confJson, extendNodes);
         Blackboard blackboard = new Blackboard();
         behaviorTree.tick(new Object(), blackboard);

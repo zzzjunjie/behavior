@@ -6,9 +6,7 @@ import com.github.silencesu.behavior3java.constant.B3Status;
 
 
 /**
- * @author SilenceSu
- * @Email Silence.Sx@Gmail.com
- * Created by Silence on 2019/3/2.
+ * 节点信息
  */
 public interface INode extends IBaseWrapper {
 

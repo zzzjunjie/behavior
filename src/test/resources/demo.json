@@ -7,21 +7,6 @@
   "root": "3491b0aa-4b18-4746-bed7-9f4d4383ee5a",
   "properties": {},
   "nodes": {
-    "83a1d7f4-9e12-464d-8830-ea9040eb24c5": {
-      "id": "83a1d7f4-9e12-464d-8830-ea9040eb24c5",
-      "name": "Repeater",
-      "category": "decorator",
-      "title": "Repeat <maxLoop>x",
-      "description": "123123",
-      "properties": {
-        "maxLoop": 3
-      },
-      "display": {
-        "x": -252,
-        "y": -108
-      },
-      "child": "6fc84f6a-bbd0-4660-9e8e-87eb8a76bb46"
-    },
     "3491b0aa-4b18-4746-bed7-9f4d4383ee5a": {
       "id": "3491b0aa-4b18-4746-bed7-9f4d4383ee5a",
       "name": "MemSequence",
@@ -30,26 +15,109 @@
       "description": "",
       "properties": {},
       "display": {
-        "x": -384,
-        "y": -84
+        "x": -468,
+        "y": -144
       },
       "children": [
-        "83a1d7f4-9e12-464d-8830-ea9040eb24c5"
+        "aa208e2a-9985-4563-8e8c-e7ef7c01c15b",
+        "2b253f98-7788-4d76-8b3b-6cab1c8d6e31",
+        "7c0cd55f-fba4-4447-8355-6291dc8cbdfb",
+        "71d495d7-1d1f-4cbb-8cf4-373b38c468e7",
+        "c2b34d1a-5c01-4335-9a42-eee3ebfa3b58",
+        "2b31cda6-3758-44f5-850b-eac0d08f0899",
+        "c703927f-bf2d-43f0-b5b7-d608d8dc30f4"
       ]
     },
-    "6fc84f6a-bbd0-4660-9e8e-87eb8a76bb46": {
-      "id": "6fc84f6a-bbd0-4660-9e8e-87eb8a76bb46",
+    "c2b34d1a-5c01-4335-9a42-eee3ebfa3b58": {
+      "id": "c2b34d1a-5c01-4335-9a42-eee3ebfa3b58",
+      "name": "Succeeder",
+      "category": "action",
+      "title": "Succeeder",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -168,
+        "y": -108
+      }
+    },
+    "2b31cda6-3758-44f5-850b-eac0d08f0899": {
+      "id": "2b31cda6-3758-44f5-850b-eac0d08f0899",
+      "name": "Runner",
+      "category": "action",
+      "title": "Runner",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -180,
+        "y": -36
+      }
+    },
+    "71d495d7-1d1f-4cbb-8cf4-373b38c468e7": {
+      "id": "71d495d7-1d1f-4cbb-8cf4-373b38c468e7",
+      "name": "Failer",
+      "category": "action",
+      "title": "Failer",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -168,
+        "y": -180
+      }
+    },
+    "c703927f-bf2d-43f0-b5b7-d608d8dc30f4": {
+      "id": "c703927f-bf2d-43f0-b5b7-d608d8dc30f4",
+      "name": "Error",
+      "category": "action",
+      "title": "Error",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -180,
+        "y": 36
+      }
+    },
+    "2b253f98-7788-4d76-8b3b-6cab1c8d6e31": {
+      "id": "2b253f98-7788-4d76-8b3b-6cab1c8d6e31",
+      "name": "Wait",
+      "category": "action",
+      "title": "Wait <milliseconds>ms",
+      "description": "等待2秒的节点",
+      "properties": {
+        "milliseconds": 2
+      },
+      "display": {
+        "x": -156,
+        "y": -300
+      }
+    },
+    "aa208e2a-9985-4563-8e8c-e7ef7c01c15b": {
+      "id": "aa208e2a-9985-4563-8e8c-e7ef7c01c15b",
       "name": "Log",
       "category": "action",
       "title": "Log",
       "description": "Log",
       "properties": {
         "k": "v",
-        "info": "哈哈哈"
+        "info": "开始等待"
       },
       "display": {
-        "x": 12,
-        "y": -84
+        "x": -156,
+        "y": -372
+      }
+    },
+    "7c0cd55f-fba4-4447-8355-6291dc8cbdfb": {
+      "id": "7c0cd55f-fba4-4447-8355-6291dc8cbdfb",
+      "name": "Log",
+      "category": "action",
+      "title": "Log",
+      "description": "Log",
+      "properties": {
+        "k": "v",
+        "info": "等待结束"
+      },
+      "display": {
+        "x": -156,
+        "y": -228
       }
     }
   },
@@ -57,8 +125,8 @@
     "camera_x": 960,
     "camera_y": 508.5,
     "camera_z": 1,
-    "x": -552,
-    "y": -84
+    "x": -564,
+    "y": -108
   },
   "custom_nodes": [
     {
