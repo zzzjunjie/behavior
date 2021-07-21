@@ -1,7 +1,9 @@
 package com.github.silencesu.behavior3java.config;
 
+
 import lombok.Getter;
 import lombok.Setter;
+
 
 /**
  * 行为树工程配置
@@ -13,15 +15,13 @@ import lombok.Setter;
 @Setter
 @Getter
 public class BTTreeProjectCfg {
-    private String name;
 
-    private String description;
+	private String name;
 
-    private String scope;
+	private String description;
 
+	private String scope;
 
-    private BTTreeProjectDataCfg data;
-
-
+	private BTTreeProjectDataCfg data;
 
 }

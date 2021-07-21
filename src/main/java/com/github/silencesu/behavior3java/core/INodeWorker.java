@@ -1,22 +1,27 @@
 package com.github.silencesu.behavior3java.core;
 
+
 import com.github.silencesu.behavior3java.constant.B3Status;
 
+
 /**
- * @author SilenceSu
- * @Email Silence.Sx@Gmail.com
- * Created by Silence on 2019/3/2.
+ * 工作节点
  */
 public interface INodeWorker {
 
-    void onEnter(Tick tick);
+	/** 进入 */
+	void onEnter(Tick tick);
 
-    void onOpen(Tick tick);
+	/** 打开 */
+	void onOpen(Tick tick);
 
-    B3Status onTick(Tick tick);
+	/** 执行 */
+	B3Status onTick(Tick tick);
 
-    void onClose(Tick tick);
+	/** 关闭 */
+	void onClose(Tick tick);
 
-    void onExit(Tick tick);
+	/** 退出 */
+	void onExit(Tick tick);
 
 }

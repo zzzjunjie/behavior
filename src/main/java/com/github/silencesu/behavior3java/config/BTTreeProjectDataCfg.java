@@ -1,10 +1,12 @@
 package com.github.silencesu.behavior3java.config;
 
+
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * @author SilenceSu
@@ -14,9 +16,13 @@ import java.util.List;
 @Setter
 @Getter
 public class BTTreeProjectDataCfg {
-    private String version;
-    private String scope;
-    private String selectedTree;
-    private List<BTTreeCfg> trees = new ArrayList<>();
+
+	private String version;
+
+	private String scope;
+
+	private String selectedTree;
+
+	private List<BTTreeCfg> trees = new ArrayList<>();
 
 }

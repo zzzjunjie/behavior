@@ -9,7 +9,7 @@ package com.github.silencesu.behavior3java.constant;
  * Created by Silence on 2019/3/2.
  */
 public enum B3Status {
-    /** 1.成功 */
+	/** 1.成功 */
 	SUCCESS(1),
 	/** 2.失败 */
 	FAILURE(2),

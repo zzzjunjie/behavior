@@ -1,24 +1,30 @@
 package com.github.silencesu.behavior3java.core;
 
+
 import com.github.silencesu.behavior3java.constant.B3Status;
+
 
 /**
  * 包装类
- * @author SilenceSu
- * @Email Silence.Sx@Gmail.com
- * Created by Silence on 2019/3/4.
  */
 public interface IBaseWrapper {
 
-    B3Status run(Tick tick);
+	/** 允许 */
+	B3Status run(Tick tick);
 
-    void enter(Tick tick);
+	/** 进入 */
+	void enter(Tick tick);
 
-    void open(Tick tick);
+	/** 打开 */
+	void open(Tick tick);
 
-    B3Status tick(Tick tick);
+	/** 执行 */
+	B3Status tick(Tick tick);
 
-    void close(Tick tick);
+	/** 关闭 */
+	void close(Tick tick);
 
-    void exit(Tick tick);
+	/** 退出 */
+	void exit(Tick tick);
+
 }

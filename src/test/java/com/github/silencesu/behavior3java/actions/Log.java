@@ -6,10 +6,9 @@ import com.github.silencesu.behavior3java.core.Tick;
 import com.github.silencesu.behavior3java.core.Action;
 import lombok.extern.slf4j.Slf4j;
 
+
 /**
- * @author SilenceSu
- * @Email Silence.Sx@Gmail.com
- * Created by Silence on 2019/3/2.
+ * 日志记录行为节点
  */
 @Slf4j
 public class Log extends Action {

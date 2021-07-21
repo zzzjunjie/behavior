@@ -1,0 +1,78 @@
+{
+  "version": "0.3.0",
+  "scope": "tree",
+  "id": "e80a256d-a5b1-442e-8e29-41a708f82f37",
+  "title": "A behavior tree",
+  "description": "",
+  "root": "3491b0aa-4b18-4746-bed7-9f4d4383ee5a",
+  "properties": {},
+  "nodes": {
+    "83a1d7f4-9e12-464d-8830-ea9040eb24c5": {
+      "id": "83a1d7f4-9e12-464d-8830-ea9040eb24c5",
+      "name": "Repeater",
+      "category": "decorator",
+      "title": "Repeat <maxLoop>x",
+      "description": "123123",
+      "properties": {
+        "maxLoop": 3
+      },
+      "display": {
+        "x": -252,
+        "y": -108
+      },
+      "child": "6fc84f6a-bbd0-4660-9e8e-87eb8a76bb46"
+    },
+    "3491b0aa-4b18-4746-bed7-9f4d4383ee5a": {
+      "id": "3491b0aa-4b18-4746-bed7-9f4d4383ee5a",
+      "name": "MemSequence",
+      "category": "composite",
+      "title": "MemSequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -384,
+        "y": -84
+      },
+      "children": [
+        "83a1d7f4-9e12-464d-8830-ea9040eb24c5"
+      ]
+    },
+    "6fc84f6a-bbd0-4660-9e8e-87eb8a76bb46": {
+      "id": "6fc84f6a-bbd0-4660-9e8e-87eb8a76bb46",
+      "name": "Log",
+      "category": "action",
+      "title": "Log",
+      "description": "Log",
+      "properties": {
+        "k": "v",
+        "info": "哈哈哈"
+      },
+      "display": {
+        "x": 12,
+        "y": -84
+      }
+    }
+  },
+  "display": {
+    "camera_x": 960,
+    "camera_y": 508.5,
+    "camera_z": 1,
+    "x": -552,
+    "y": -84
+  },
+  "custom_nodes": [
+    {
+      "version": "0.3.0",
+      "scope": "node",
+      "name": "Log",
+      "category": "action",
+      "title": "Log",
+      "description": "Log",
+      "properties": {
+        "k": "v"
+      },
+      "parent": null
+    }
+  ],
+  "custom_folders": []
+}
