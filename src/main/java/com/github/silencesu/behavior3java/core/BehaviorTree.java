@@ -139,7 +139,7 @@ public class BehaviorTree {
 
 		// does not close if it is still open in this tick
 		int start = 0;
-		for (int i = 0; i < (lastOpenNodes.size() > currOpenNodes.size() ? currOpenNodes.size() : lastOpenNodes.size()); i++) {
+		for (int i = 0; i < (Math.min(lastOpenNodes.size(), currOpenNodes.size())); i++) {
 			start = i + 1;
 			if (lastOpenNodes.get(i) != currOpenNodes.get(i)) {
 				break;

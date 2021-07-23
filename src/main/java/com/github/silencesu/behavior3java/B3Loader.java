@@ -13,10 +13,6 @@ import java.util.Map;
 
 /**
  * 行为树加载器
- *
- * @author SilenceSu
- * @Email Silence.Sx@Gmail.com
- * Created by Silence on 2019/9/20.
  */
 public class B3Loader {
 

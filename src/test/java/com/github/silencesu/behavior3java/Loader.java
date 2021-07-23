@@ -1,6 +1,7 @@
 package com.github.silencesu.behavior3java;
 
 import com.github.silencesu.behavior3java.actions.Log;
+import com.github.silencesu.behavior3java.condition.DemoCondition;
 import com.github.silencesu.behavior3java.core.BaseNode;
 import com.github.silencesu.behavior3java.core.BehaviorTree;
 import com.github.silencesu.behavior3java.core.BehaviorTreeProject;
@@ -23,6 +24,7 @@ public class Loader {
     private static Map<String, Class<? extends BaseNode>> extendNodes = new HashMap<String, Class<? extends BaseNode>>() {
         {
             put("Log", Log.class);
+            put("DemoCondition", DemoCondition.class);
         }
     };
 

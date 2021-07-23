@@ -6,6 +6,7 @@
   "description": "",
   "root": "3491b0aa-4b18-4746-bed7-9f4d4383ee5a",
   "properties": {},
+  "parent": null,
   "nodes": {
     "3491b0aa-4b18-4746-bed7-9f4d4383ee5a": {
       "id": "3491b0aa-4b18-4746-bed7-9f4d4383ee5a",
@@ -15,109 +16,23 @@
       "description": "",
       "properties": {},
       "display": {
-        "x": -468,
-        "y": -144
+        "x": -456,
+        "y": -108
       },
       "children": [
-        "aa208e2a-9985-4563-8e8c-e7ef7c01c15b",
-        "2b253f98-7788-4d76-8b3b-6cab1c8d6e31",
-        "7c0cd55f-fba4-4447-8355-6291dc8cbdfb",
-        "71d495d7-1d1f-4cbb-8cf4-373b38c468e7",
-        "c2b34d1a-5c01-4335-9a42-eee3ebfa3b58",
-        "2b31cda6-3758-44f5-850b-eac0d08f0899",
-        "c703927f-bf2d-43f0-b5b7-d608d8dc30f4"
+        "097767df-805d-477e-8ebd-7400056868ae"
       ]
     },
-    "c2b34d1a-5c01-4335-9a42-eee3ebfa3b58": {
-      "id": "c2b34d1a-5c01-4335-9a42-eee3ebfa3b58",
-      "name": "Succeeder",
-      "category": "action",
-      "title": "Succeeder",
-      "description": "",
+    "097767df-805d-477e-8ebd-7400056868ae": {
+      "id": "097767df-805d-477e-8ebd-7400056868ae",
+      "name": "DemoCondition",
+      "category": "condition",
+      "title": "条件节点",
+      "description": "条件节点",
       "properties": {},
       "display": {
-        "x": -168,
-        "y": -108
-      }
-    },
-    "2b31cda6-3758-44f5-850b-eac0d08f0899": {
-      "id": "2b31cda6-3758-44f5-850b-eac0d08f0899",
-      "name": "Runner",
-      "category": "action",
-      "title": "Runner",
-      "description": "",
-      "properties": {},
-      "display": {
-        "x": -180,
-        "y": -36
-      }
-    },
-    "71d495d7-1d1f-4cbb-8cf4-373b38c468e7": {
-      "id": "71d495d7-1d1f-4cbb-8cf4-373b38c468e7",
-      "name": "Failer",
-      "category": "action",
-      "title": "Failer",
-      "description": "",
-      "properties": {},
-      "display": {
-        "x": -168,
-        "y": -180
-      }
-    },
-    "c703927f-bf2d-43f0-b5b7-d608d8dc30f4": {
-      "id": "c703927f-bf2d-43f0-b5b7-d608d8dc30f4",
-      "name": "Error",
-      "category": "action",
-      "title": "Error",
-      "description": "",
-      "properties": {},
-      "display": {
-        "x": -180,
-        "y": 36
-      }
-    },
-    "2b253f98-7788-4d76-8b3b-6cab1c8d6e31": {
-      "id": "2b253f98-7788-4d76-8b3b-6cab1c8d6e31",
-      "name": "Wait",
-      "category": "action",
-      "title": "Wait <milliseconds>ms",
-      "description": "等待2秒的节点",
-      "properties": {
-        "milliseconds": 2
-      },
-      "display": {
-        "x": -156,
-        "y": -300
-      }
-    },
-    "aa208e2a-9985-4563-8e8c-e7ef7c01c15b": {
-      "id": "aa208e2a-9985-4563-8e8c-e7ef7c01c15b",
-      "name": "Log",
-      "category": "action",
-      "title": "Log",
-      "description": "Log",
-      "properties": {
-        "k": "v",
-        "info": "开始等待"
-      },
-      "display": {
-        "x": -156,
-        "y": -372
-      }
-    },
-    "7c0cd55f-fba4-4447-8355-6291dc8cbdfb": {
-      "id": "7c0cd55f-fba4-4447-8355-6291dc8cbdfb",
-      "name": "Log",
-      "category": "action",
-      "title": "Log",
-      "description": "Log",
-      "properties": {
-        "k": "v",
-        "info": "等待结束"
-      },
-      "display": {
-        "x": -156,
-        "y": -228
+        "x": -228,
+        "y": -144
       }
     }
   },
@@ -132,13 +47,11 @@
     {
       "version": "0.3.0",
       "scope": "node",
-      "name": "Log",
-      "category": "action",
-      "title": "Log",
-      "description": "Log",
-      "properties": {
-        "k": "v"
-      },
+      "name": "DemoCondition",
+      "category": "condition",
+      "title": "条件节点",
+      "description": "条件节点",
+      "properties": {},
       "parent": null
     }
   ],

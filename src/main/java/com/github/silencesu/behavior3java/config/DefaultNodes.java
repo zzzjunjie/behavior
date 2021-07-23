@@ -17,10 +17,6 @@ import java.util.Map;
 
 /**
  * 默认节点
- *
- * @author SilenceSu
- * @Email Silence.Sx@Gmail.com
- * Created by Silence on 2019/3/6.
  */
 public class DefaultNodes {
 
