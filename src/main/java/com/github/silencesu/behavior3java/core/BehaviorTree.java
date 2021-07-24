@@ -115,9 +115,7 @@ public class BehaviorTree {
 			nodes.put(id, node);
 		}
 
-		/**
-		 * 连接行为树
-		 */
+		// 连接行为树
 		for (Map.Entry<String, BTNodeCfg> nodeEntry : cfg.getNodes().entrySet()) {
 			// 根据节点名称获取节点
 			BaseNode node = nodes.get(nodeEntry.getKey());

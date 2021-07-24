@@ -12,26 +12,30 @@ import java.util.Map;
 
 /**
  * 行为树工程
- *
- * @author SilenceSu
- * @Email Silence.Sx@Gmail.com
- * Created by Silence on 2019/3/2.
  */
 @Data
 @Slf4j
 public class BehaviorTreeProject {
 
-	/**
-	 * 工程内的树
-	 */
+	// K:行为树Title V:行为树
 	private Map<String, BehaviorTree> titleTreeMap = new HashMap<>();
-
+	// K:行为树ID V:行为树
 	private Map<String, BehaviorTree> idTreeMap = new HashMap<>();
 
+	/**
+	 * 根据行为树标题查找对应的行为树
+	 * @param treeTitle 行为树Title
+	 * @return 行为树
+	 */
 	public BehaviorTree findBTTreeByTitle(String treeTitle) {
 		return titleTreeMap.get(treeTitle.trim());
 	}
 
+	/**
+	 * 根据行为树ID查找行为树
+	 * @param id 行为树ID
+	 * @return 行为树
+	 */
 	public BehaviorTree findBTTreeById(String id) {
 		return idTreeMap.get(id);
 	}

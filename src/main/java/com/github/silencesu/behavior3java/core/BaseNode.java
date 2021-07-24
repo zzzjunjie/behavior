@@ -78,7 +78,7 @@ public abstract class BaseNode implements INode, INodeWorker {
 	/**
 	 * 初始化
 	 *
-	 * @param nodeCfg
+	 * @param nodeCfg 节点配置信息
 	 */
 	@Override
 	public void initialize(BTNodeCfg nodeCfg) {
