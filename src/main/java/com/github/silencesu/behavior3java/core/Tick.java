@@ -9,10 +9,6 @@ import java.util.List;
 
 /**
  * Tick 执行类
- *
- * @author SilenceSu
- * @Email Silence.Sx@Gmail.com
- * Created by Silence on 2019/3/2.
  */
 @Data
 public class Tick {
@@ -20,7 +16,7 @@ public class Tick {
 	// 行为树
 	private BehaviorTree tree;
 
-	// 黑板
+	// 黑板 用来记录运行时产生并且需要保存的数据
 	private Blackboard blackboard;
 
 	// 加入的节点

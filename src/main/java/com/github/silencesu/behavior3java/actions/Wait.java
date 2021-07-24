@@ -19,7 +19,7 @@ public class Wait extends Action {
 	public void initialize(BTNodeCfg nodeCfg) {
 		super.initialize(nodeCfg);
 		String ml = nodeCfg.getProperties().get(B3Const.END_TIME);
-		endTime = Long.valueOf(ml);
+		endTime = Long.parseLong(ml);
 	}
 
 	@Override

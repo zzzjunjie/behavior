@@ -12,10 +12,6 @@ import java.util.Map;
 /**
  * 黑板报
  * k-v存储数据
- *
- * @author SilenceSu
- * @Email Silence.Sx@Gmail.com
- * Created by Silence on 2019/3/2.
  */
 @Data
 public class Blackboard {
@@ -34,7 +30,7 @@ public class Blackboard {
 
 	void SetTree(String key, Object object, String treeScope) {
 
-		Memory memory = this.getMemeory(treeScope, "");
+		Memory memory = this.getMemory(treeScope, "");
 
 		memory.getMemeory().put(key, object);
 	}
@@ -50,7 +46,7 @@ public class Blackboard {
 		return tm;
 	}
 
-	public Memory getMemeory(String treeScope, String nodeScope) {
+	public Memory getMemory(String treeScope, String nodeScope) {
 
 		TreeMemory tm = getTreeMemory(treeScope);
 
@@ -59,7 +55,7 @@ public class Blackboard {
 
 	Boolean getBool(String key, String treeScope, String nodeScope) {
 
-		Memory memory = getMemeory(treeScope, nodeScope);
+		Memory memory = getMemory(treeScope, nodeScope);
 		if (memory == null) {
 			return false;
 		}
@@ -83,13 +79,13 @@ public class Blackboard {
 	}
 
 	public void setParam(String key, Object value, String treeScope, String nodeScope) {
-		Memory memory = getMemeory(treeScope, nodeScope);
+		Memory memory = getMemory(treeScope, nodeScope);
 		memory.getMemeory().put(key, value);
 	}
 
 	@SuppressWarnings("unchecked")
 	public <T> T getParam(String key, String treeScope, String nodeScope) {
-		Memory memory = getMemeory(treeScope, nodeScope);
+		Memory memory = getMemory(treeScope, nodeScope);
 		Object object = memory.getMemeory().get(key);
 		return (T) object;
 	}

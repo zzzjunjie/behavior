@@ -16,14 +16,14 @@ public class MemSequence extends Composite {
 	@Override
 	public void onOpen(Tick tick) {
 
-		Blackboard.Memory memory = tick.getBlackboard().getMemeory(tick.getTree().getId(), this.getId());
+		Blackboard.Memory memory = tick.getBlackboard().getMemory(tick.getTree().getId(), this.getId());
 		memory.getMemeory().put(B3Const.RUNNING_CHILD, 0);
 	}
 
 	@Override
 	public B3Status onTick(Tick tick) {
 
-		Blackboard.Memory mm = tick.getBlackboard().getMemeory(tick.getTree().getId(), this.getId());
+		Blackboard.Memory mm = tick.getBlackboard().getMemory(tick.getTree().getId(), this.getId());
 
 		int child = (int) mm.getMemeory().get(B3Const.RUNNING_CHILD);
 

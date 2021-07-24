@@ -22,7 +22,7 @@ public interface INode extends IBaseWrapper {
 	/** 获取节点名称 */
 	String getName();
 
-	/** 获取节点变体 */
+	/** 获取节点变标题 */
 	String getTitle();
 
 }

@@ -9,7 +9,7 @@ import com.github.silencesu.behavior3java.constant.B3Status;
  */
 public interface IBaseWrapper {
 
-	/** 允许 */
+	/** 运行 */
 	B3Status run(Tick tick);
 
 	/** 进入 */
