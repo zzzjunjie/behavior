@@ -7,6 +7,7 @@ import com.github.silencesu.behavior3java.config.BevTreeConfig;
 import com.github.silencesu.behavior3java.core.BaseNode;
 import com.github.silencesu.behavior3java.core.BehaviorTree;
 import com.github.silencesu.behavior3java.core.BehaviorTreeProject;
+import org.apache.commons.collections4.MapUtils;
 
 import java.util.Map;
 
@@ -27,7 +28,7 @@ public class B3Loader {
 
 		// 配置文件转为树
 		BehaviorTree tree = new BehaviorTree();
-		if (extendNodes != null && !extendNodes.isEmpty()) {
+		if (!MapUtils.isEmpty(extendNodes)) {
 			tree.load(btTreeCfg, extendNodes);
 		} else {
 			tree.load(btTreeCfg);
@@ -39,9 +40,9 @@ public class B3Loader {
 	/**
 	 * 加载工程
 	 *
-	 * @param projectJson
-	 * @param extendNodes
-	 * @return
+	 * @param projectJson 项目JSON文件
+	 * @param extendNodes 加载扩展的节点
+	 * @return 行为树项目
 	 */
 	public static BehaviorTreeProject loadB3Project(String projectJson, Map<String, Class<? extends BaseNode>> extendNodes) {
 		BTTreeProjectCfg projectCfg = BevTreeConfig.LoadBTTreePorjectCfg(projectJson);
