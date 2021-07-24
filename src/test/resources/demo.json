@@ -1,38 +1,114 @@
 {
   "version": "0.3.0",
   "scope": "tree",
-  "id": "e80a256d-a5b1-442e-8e29-41a708f82f37",
-  "title": "A behavior tree",
+  "id": "cf5b12f2-2a21-40b4-8d2f-1b3ce7c4a938",
+  "title": "测试行为树",
   "description": "",
-  "root": "3491b0aa-4b18-4746-bed7-9f4d4383ee5a",
+  "root": "0d428b79-47b1-4400-8d4f-f60921216b7d",
   "properties": {},
-  "parent": null,
   "nodes": {
-    "3491b0aa-4b18-4746-bed7-9f4d4383ee5a": {
-      "id": "3491b0aa-4b18-4746-bed7-9f4d4383ee5a",
-      "name": "MemSequence",
+    "0d428b79-47b1-4400-8d4f-f60921216b7d": {
+      "id": "0d428b79-47b1-4400-8d4f-f60921216b7d",
+      "name": "Sequence",
       "category": "composite",
-      "title": "MemSequence",
+      "title": "Sequence",
       "description": "",
       "properties": {},
       "display": {
-        "x": -456,
-        "y": -108
+        "x": -372,
+        "y": -72
       },
       "children": [
-        "097767df-805d-477e-8ebd-7400056868ae"
+        "405fadd7-a07f-4342-b52c-1b9228dff1d0",
+        "bdcffdae-0dd3-4e0d-94e9-25de45b741c5"
       ]
     },
-    "097767df-805d-477e-8ebd-7400056868ae": {
-      "id": "097767df-805d-477e-8ebd-7400056868ae",
-      "name": "DemoCondition",
-      "category": "condition",
-      "title": "条件节点",
-      "description": "条件节点",
+    "405fadd7-a07f-4342-b52c-1b9228dff1d0": {
+      "id": "405fadd7-a07f-4342-b52c-1b9228dff1d0",
+      "name": "Sequence",
+      "category": "composite",
+      "title": "Sequence",
+      "description": "",
       "properties": {},
       "display": {
-        "x": -228,
-        "y": -144
+        "x": -240,
+        "y": -204
+      },
+      "children": [
+        "4fb2d51c-4725-4dbb-a3e1-58f3944c46fb",
+        "f4a8de4f-4caf-493e-902f-5ce78ad4385b"
+      ]
+    },
+    "4fb2d51c-4725-4dbb-a3e1-58f3944c46fb": {
+      "id": "4fb2d51c-4725-4dbb-a3e1-58f3944c46fb",
+      "name": "Log",
+      "category": "action",
+      "title": "日志节点",
+      "description": "日志行为",
+      "properties": {
+        "info": 1
+      },
+      "display": {
+        "x": -12,
+        "y": -300
+      }
+    },
+    "f4a8de4f-4caf-493e-902f-5ce78ad4385b": {
+      "id": "f4a8de4f-4caf-493e-902f-5ce78ad4385b",
+      "name": "Log",
+      "category": "action",
+      "title": "日志节点",
+      "description": "日志行为",
+      "properties": {
+        "info": 2
+      },
+      "display": {
+        "x": -48,
+        "y": -216
+      }
+    },
+    "bdcffdae-0dd3-4e0d-94e9-25de45b741c5": {
+      "id": "bdcffdae-0dd3-4e0d-94e9-25de45b741c5",
+      "name": "Sequence",
+      "category": "composite",
+      "title": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -240,
+        "y": -36
+      },
+      "children": [
+        "4148d197-74a3-4566-8ac3-69fa7c36bd56",
+        "98055a1b-ed43-4877-bcc4-85e3d0e3ab2d"
+      ]
+    },
+    "4148d197-74a3-4566-8ac3-69fa7c36bd56": {
+      "id": "4148d197-74a3-4566-8ac3-69fa7c36bd56",
+      "name": "Log",
+      "category": "action",
+      "title": "日志节点",
+      "description": "日志行为",
+      "properties": {
+        "info": 3
+      },
+      "display": {
+        "x": -60,
+        "y": -36
+      }
+    },
+    "98055a1b-ed43-4877-bcc4-85e3d0e3ab2d": {
+      "id": "98055a1b-ed43-4877-bcc4-85e3d0e3ab2d",
+      "name": "Log",
+      "category": "action",
+      "title": "日志节点",
+      "description": "日志行为",
+      "properties": {
+        "info": 4
+      },
+      "display": {
+        "x": -36,
+        "y": 72
       }
     }
   },
@@ -40,8 +116,8 @@
     "camera_x": 960,
     "camera_y": 508.5,
     "camera_z": 1,
-    "x": -564,
-    "y": -108
+    "x": -516,
+    "y": -72
   },
   "custom_nodes": [
     {
@@ -51,6 +127,16 @@
       "category": "condition",
       "title": "条件节点",
       "description": "条件节点",
+      "properties": {},
+      "parent": null
+    },
+    {
+      "version": "0.3.0",
+      "scope": "node",
+      "name": "Log",
+      "category": "action",
+      "title": "日志节点",
+      "description": "日志行为",
       "properties": {},
       "parent": null
     }

@@ -2,6 +2,7 @@ package com.github.silencesu.behavior3java;
 
 import com.github.silencesu.behavior3java.actions.Log;
 import com.github.silencesu.behavior3java.condition.DemoCondition;
+import com.github.silencesu.behavior3java.constant.B3Status;
 import com.github.silencesu.behavior3java.core.BaseNode;
 import com.github.silencesu.behavior3java.core.BehaviorTree;
 import com.github.silencesu.behavior3java.core.BehaviorTreeProject;
@@ -34,7 +35,7 @@ public class Loader {
         String confJson = Loader.class.getResource("/").getPath() + "demo.json";
         BehaviorTree behaviorTree = B3Loader.loadB3Tree(confJson, extendNodes);
         Blackboard blackboard = new Blackboard();
-        behaviorTree.tick(new Object(), blackboard);
+        B3Status tick = behaviorTree.tick(new Object(), blackboard);
     }
 
     @Test

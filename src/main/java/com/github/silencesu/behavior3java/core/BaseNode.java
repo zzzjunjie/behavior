@@ -93,15 +93,15 @@ public abstract class BaseNode implements INode, INodeWorker {
 
 	@Override
 	public B3Status run(Tick tick) {
-
+		// 进入节点
 		this.enter(tick);
-
+		// 如果节点没有打开，就执行打开
 		if (!tick.getBlackboard().getBool("isOpen", tick.getTree().getId(), this.id)) {
 			this.open(tick);
 		}
-
+		// 节点运行
 		B3Status status = this.tick(tick);
-
+		// 节点
 		if (status != B3Status.RUNNING) {
 			this.onClose(tick);
 		}
