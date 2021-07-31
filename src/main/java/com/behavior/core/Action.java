@@ -1,7 +1,7 @@
 package com.behavior.core;
 
 
-import com.behavior.constant.B3Const;
+import com.behavior.constant.Const;
 
 
 /**
@@ -11,7 +11,7 @@ public abstract class Action extends BaseNode implements IAction {
 
 	@Override
 	public String getCategory() {
-		return B3Const.ACTION;
+		return Const.ACTION;
 	}
 
 }

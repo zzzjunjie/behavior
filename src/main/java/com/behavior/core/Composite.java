@@ -1,7 +1,7 @@
 package com.behavior.core;
 
 
-import com.behavior.constant.B3Const;
+import com.behavior.constant.Const;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +35,7 @@ public abstract class Composite extends BaseNode implements IComposite {
 
 	@Override
 	public String getCategory() {
-		return B3Const.COMPOSITE;
+		return Const.COMPOSITE;
 	}
 
 }

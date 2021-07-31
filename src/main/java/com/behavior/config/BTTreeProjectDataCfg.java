@@ -9,9 +9,7 @@ import java.util.List;
 
 
 /**
- * @author SilenceSu
- * @Email Silence.Sx@Gmail.com
- * Created by Silence on 2020/1/18.
+ * 行为树工程数据配置
  */
 @Setter
 @Getter

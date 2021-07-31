@@ -1,30 +1,30 @@
 package com.behavior.util;
 
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import lombok.Cleanup;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.util.FileCopyUtils;
+import org.springframework.util.ResourceUtils;
+
+import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * 文件工具
- *
- * @author SilenceSu
- * @Email Silence.Sx@Gmail.com
- * Created by Silence on 2019/3/2.
  */
 public class FileUtil {
 
 	/**
 	 * 读取文件内容
 	 *
-	 * @param Path
+	 * @param Path 文件路径
 	 * @return
 	 */
 	public static String readFile(String Path) {
-
 		BufferedReader reader = null;
 		StringBuilder laststr = new StringBuilder();
 		try {
@@ -48,6 +48,23 @@ public class FileUtil {
 			}
 		}
 		return laststr.toString();
+	}
+
+	public static List<String> fuzzyMatchingFile(String path) {
+		List<String> res = new ArrayList<>();
+		try {
+			Resource[] resources = new PathMatchingResourcePatternResolver().getResources(ResourceUtils.CLASSPATH_URL_PREFIX + path);
+			for (Resource resource : resources) {
+				@Cleanup InputStream inputStream = resource.getInputStream();
+				@Cleanup InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+				@Cleanup BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+				String fileString = FileCopyUtils.copyToString(bufferedReader);
+				res.add(fileString);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return res;
 	}
 
 }

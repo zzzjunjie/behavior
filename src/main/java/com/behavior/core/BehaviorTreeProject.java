@@ -52,7 +52,7 @@ public class BehaviorTreeProject {
 
 			BehaviorTree behaviorTree = new BehaviorTree();
 			behaviorTree.setProjectInfo(this);
-			behaviorTree.load(treeCfg, extendNodes);
+			behaviorTree.load(treeCfg);
 
 			titleTreeMap.put(treeCfg.getTitle(), behaviorTree);
 			idTreeMap.put(treeCfg.getId(), behaviorTree);

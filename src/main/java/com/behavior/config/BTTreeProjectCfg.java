@@ -7,10 +7,6 @@ import lombok.Setter;
 
 /**
  * 行为树工程配置
- *
- * @author SilenceSu
- * @Email Silence.Sx@Gmail.com
- * Created by Silence on 2020/1/18.
  */
 @Setter
 @Getter

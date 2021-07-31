@@ -12,10 +12,6 @@ import java.util.Map;
 
 /**
  * bt配置
- *
- * @author SilenceSu
- * @Email Silence.Sx@Gmail.com
- * Created by Silence on 2019/3/2.
  */
 public class BevTreeConfig {
 

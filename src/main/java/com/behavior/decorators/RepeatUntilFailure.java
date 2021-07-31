@@ -1,18 +1,20 @@
 package com.behavior.decorators;
 
 
+import com.behavior.annotation.BehaviorNode;
 import com.behavior.config.BTNodeCfg;
-import com.behavior.constant.B3Const;
+import com.behavior.constant.Const;
 import com.behavior.constant.B3Status;
-import com.behavior.core.Tick;
 import com.behavior.core.Decorator;
+import com.behavior.core.Tick;
+import com.behavior.enums.NodeTypeEnums;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 
-/**
- * @author SilenceSu
- * @Email Silence.Sx@Gmail.com
- * Created by Silence on 2019/3/2.
- */
+@Component
+@Scope("prototype")
+@BehaviorNode(TYPE_ENUMS = NodeTypeEnums.DECORATOR)
 public class RepeatUntilFailure extends Decorator {
 
 	private int maxLoop;
@@ -20,7 +22,7 @@ public class RepeatUntilFailure extends Decorator {
 	@Override
 	public void initialize(BTNodeCfg nodeCfg) {
 		super.initialize(nodeCfg);
-		this.maxLoop = Integer.valueOf(nodeCfg.getProperties().get(B3Const.MAX_LOOP));
+		this.maxLoop = Integer.valueOf(nodeCfg.getProperties().get(Const.MAX_LOOP));
 	}
 
 	@Override

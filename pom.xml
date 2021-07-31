@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <name>behavior3java</name>
-    <groupId>com.github.silencesu</groupId>
-    <artifactId>behavior3java</artifactId>
+    <name>behavior</name>
+    <groupId>com.behavior</groupId>
+    <artifactId>behavior</artifactId>
     <version>1.1.0</version>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -104,18 +104,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <distributionManagement>
-        <repository>
-            <id>releases</id>
-            <name>libs-release-local</name>
-            <url>http://192.168.0.239:8081/artifactory/libs-release-local</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>libs-snapshot-local</name>
-            <url>http://192.168.0.239:8081/artifactory/libs-snapshot-local</url>
-        </snapshotRepository>
-    </distributionManagement>
 
 </project>

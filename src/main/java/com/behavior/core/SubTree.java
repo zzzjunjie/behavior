@@ -1,8 +1,12 @@
 package com.behavior.core;
 
 
-import com.behavior.constant.B3Const;
+import com.behavior.annotation.BehaviorNode;
 import com.behavior.constant.B3Status;
+import com.behavior.constant.Const;
+import com.behavior.enums.NodeTypeEnums;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 
 /**
@@ -14,7 +18,7 @@ public class SubTree extends Action {
 
 	@Override
 	public String getCategory() {
-		return B3Const.ACTION;
+		return Const.ACTION;
 	}
 
 	@Override

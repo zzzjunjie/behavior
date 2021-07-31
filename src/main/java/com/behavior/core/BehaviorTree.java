@@ -3,35 +3,31 @@ package com.behavior.core;
 
 import com.behavior.config.BTNodeCfg;
 import com.behavior.config.BTTreeCfg;
-import com.behavior.config.DefaultNodes;
-import com.behavior.constant.B3Const;
 import com.behavior.constant.B3Status;
+import com.behavior.constant.Const;
+import com.behavior.util.SpringContextUtils;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.util.CollectionUtils;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 
 /**
  * 行为树
- *
- * @author SilenceSu
- * @Email Silence.Sx@Gmail.com
- * Created by Silence on 2019/3/2.
  */
 @Getter
 @Setter
-@Slf4j
+@NoArgsConstructor
+@Log4j2
 public class BehaviorTree {
 
 	// 行为树唯一ID
-	private String id = UUID.randomUUID().toString().replaceAll("-", "");
+	private String id;
 
 	// 行为树标题
 	private String titile;
@@ -48,32 +44,20 @@ public class BehaviorTree {
 	// 行为树项目
 	private BehaviorTreeProject projectInfo;
 
-	/**
-	 * 载入行为树
-	 *
-	 * @param cfg 行为树配置
-	 */
-	public void load(BTTreeCfg cfg) {
-		load(cfg, new HashMap<>());
+	public BehaviorTree(String id) {
+		this.id = id;
 	}
 
 	/**
 	 * 载入行为树
 	 *
 	 * @param cfg         行为树配置
-	 * @param extendNodes 扩展节点
 	 */
-	public void load(BTTreeCfg cfg, Map<String, Class<? extends BaseNode>> extendNodes) {
+	public void load(BTTreeCfg cfg) {
 		// 初始化配置信息
 		this.titile = cfg.getTitle();
 		this.description = cfg.getDescription();
 		this.properties = cfg.getProperties();
-		// 获取项目中的默认节点
-		Map<String, Class<? extends BaseNode>> nodeMaps = new HashMap<>(DefaultNodes.get());
-		// 加载扩展nodes
-		if (extendNodes != null && extendNodes.size() > 0) {
-			nodeMaps.putAll(extendNodes);
-		}
 		// 行为树中所有的节点
 		Map<String, BaseNode> nodes = new HashMap<>();
 		// 循环创建行为树中的配置节点
@@ -82,28 +66,16 @@ public class BehaviorTree {
 			String id = nodeEntry.getKey();
 			// 节点配置信息
 			BTNodeCfg nodeCfg = nodeEntry.getValue();
-
+			// 每一个节点
 			BaseNode node = null;
-
 			// 检查节点类型是否为子数类型
-			if (B3Const.SUBTREE.equals(nodeCfg.getCategory())) {
-				node = new SubTree();
+			if (Const.SUBTREE.equals(nodeCfg.getCategory())) {
+				// TODO 如果是子树类型的话如何处理呢？
+				// node = SpringContextUtils.getBean()
 			} else {
 				// 普通结点加载,根据名字来加载
-				Class<? extends BaseNode> clazz = nodeMaps.get(nodeCfg.getName());
-				if (clazz != null) {
-					try {
-						// 实例化节点
-						node = clazz.getDeclaredConstructor().newInstance();
-					} catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
-						e.printStackTrace();
-					}
-				}
-			}
-			// 节点实例化失败
-			if (node == null) {
-				log.error("create node erro:{}", nodeCfg.getName());
-				break;
+				Object bean = SpringContextUtils.getBean(nodeCfg.getName());
+				node = (BaseNode) bean;
 			}
 			// 节点信息初始化
 			node.initialize(nodeCfg);
@@ -111,7 +83,6 @@ public class BehaviorTree {
 			if (projectInfo != null) {
 				node.setProjectInfo(projectInfo);
 			}
-
 			nodes.put(id, node);
 		}
 
@@ -122,12 +93,12 @@ public class BehaviorTree {
 			// 节点的配置信息
 			BTNodeCfg nodeCfg = nodeEntry.getValue();
 			// 如果是组合节点的话，循环遍历子节点
-			if (B3Const.COMPOSITE.equals(node.getCategory()) && !CollectionUtils.isEmpty(nodeCfg.getChildren())) {
+			if (Const.COMPOSITE.equals(node.getCategory()) && !CollectionUtils.isEmpty(nodeCfg.getChildren())) {
 				for (String cid : nodeCfg.getChildren()) {
 					IComposite comp = (IComposite) node;
 					comp.addChild(nodes.get(cid));
 				}
-			} else if (B3Const.DECORATOR.equals(node.getCategory()) && !CollectionUtils.isEmpty(nodeCfg.getChildren())) {
+			} else if (Const.DECORATOR.equals(node.getCategory()) && !CollectionUtils.isEmpty(nodeCfg.getChildren())) {
 				IDecorator deco = (IDecorator) node;
 				deco.setChild(nodes.get(nodeCfg.getChild()));
 			}
@@ -139,9 +110,10 @@ public class BehaviorTree {
 
 	/**
 	 * 开始执行行为树
-	 * @param t 拥有这个tick的目标
+	 *
+	 * @param t          拥有这个tick的目标
 	 * @param blackboard 黑板
-	 * @param <T> 目标类型
+	 * @param <T>        目标类型
 	 * @return 行为树运作状态
 	 */
 	public <T> B3Status tick(T t, Blackboard blackboard) {
